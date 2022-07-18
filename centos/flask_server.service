@@ -1,0 +1,25 @@
+#sudo nano /etc/systemd/system/flask_server.service
+
+[Unit]
+Description=Gunicorn instance to serve flask_server
+After=network.target
+
+[Service]
+User=han
+Group=nginx
+WorkingDirectory=/home/han/flask_server
+Environment="PATH=/home/han/flask_server/venv/bin"
+
+ExecStart=/home/han/flask_server/venv/bin/gunicorn --workers 5 --bind unix:flask_server.sock -m 007 run:app --reload --enable-stdio-inheritance --error-logfile /home/han/flask_server/error.log --access-logfile /home/han/flask_server/access.log --capture-output --log-level error
+
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
+
+#sudo systemctl start flask_server
+#sudo systemctl enable flask_server
+#sudo systemctl status flask_server
+
+
+

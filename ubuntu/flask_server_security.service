@@ -1,4 +1,4 @@
-#sudo nano /etc/systemd/system/flask_server_security.service
+#sudo nano /etc/systemd/system/flask_server.service
 
 [Unit]
 Description=Gunicorn instance to serve flask_server_security
