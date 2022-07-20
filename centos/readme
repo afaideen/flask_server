@@ -12,8 +12,9 @@ References
 
 4. How to install pycharm community
     a. https://www.javatpoint.com/how-to-install-pycharm-on-centos
+    b. https://snapcraft.io/install/pycharm-community/centos (USE THIS)
 
 LINUX command
 1. Test gunicorn
-    - gunicorn --bind 0.0.0.0:5000 run
+    - gunicorn --bind 0.0.0.0:5000 run:app
 
